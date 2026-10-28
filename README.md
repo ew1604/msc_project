@@ -1,7 +1,4 @@
 # msc_project
-
-Here is a more concise conference-style README you can use for a project comparison or paper repository.
-
 ```md
 # Web Prevalence of Password Storage Functions and their Parameteres
 
@@ -35,10 +32,10 @@ This work contributes an automated workflow for collecting and analysing real-wo
 
 ## Research Questions
 
-- Which password-hashing and key-derivation algorithms appear most frequently in public GitHub repositories?
-- How do these implementations vary by programming language?
-- What parameter configurations are commonly used in real-world code?
-- How does repository popularity relate to the use of stronger password-hashing methods?
+- What password hashing or password related algorithms are prevalent within the analysed software repositories?
+- To what extent do observed password hashing implementations and parameter configurations align with established recommendations?
+- How does the prevalence and configuration of password hashing algorithms vary across the programming languages analysed?
+
 
 ## Methodology
 
@@ -59,95 +56,13 @@ Candidate source files are downloaded and analysed using regex-based extraction 
 ### 5. Comparative Analysis
 The extracted dataset is grouped by algorithm, language, and repository tier, enabling comparative analysis of implementation patterns and repository characteristics.
 
-## Repository Workflow
-
-```text
-setup_dirs.sh
-    ↓
-github_search.ipynb
-    ↓
-deduplicator.ipynb
-    ↓
-clean.ipynb
-    ↓
-parameter_extractor.ipynb
-```
-
-## Repository Structure
-
-```text
-project/
-├── setup_dirs.sh
-├── github_search.ipynb
-├── deduplicator.ipynb
-├── clean.ipynb
-├── parameter_extractor.ipynb
-├── README.md
-├── data/
-│   ├── raw/
-│   ├── cleaned/
-│   └── extracted/
-├── outputs/
-│   ├── tier_1.csv
-│   ├── tier_2.csv
-│   ├── tier_3.csv
-│   └── tier_4.csv
-├── requirements.txt
-└── docs/
-```
-
-## Data Outputs
-
-The pipeline generates structured outputs including:
-
-- raw GitHub code-search results,
-- deduplicated CSV datasets,
-- cleaned records enriched with repository metadata,
-- tiered CSV files based on repository stars,
-- extracted cryptographic parameter values.
-
-## Algorithms of Interest
-
-- Argon2
-- bcrypt
-- PBKDF2
-- scrypt
-- yescrypt
-- Lyra2
-
 ## Key Contributions
 
-- Reproducible workflow for mining and analysing password-hashing implementations on GitHub.
+- Workflow for mining and analysing password-hashing implementations on GitHub.
 - Automated pipeline for deduplication, cleaning, and metadata enrichment.
-- Extraction of concrete algorithm parameters from real-world code.
+- Extraction of  algorithm parameters from real-world open source projects.
 - Comparative evaluation framework across repository popularity and language.
 
-## Usage
-
-1. Create required project directories:
-   ```bash
-   bash setup_dirs.sh
-   ```
-
-2. Run the code-search notebook:
-   ```bash
-   jupyter notebook github_search.ipynb
-   ```
-
-3. Run deduplication:
-   ```bash
-   jupyter notebook deduplicator.ipynb
-   ```
-
-4. Run cleaning and star-tier ranking:
-   ```bash
-   jupyter notebook clean.ipynb
-   ```
-
-5. Extract algorithm parameters:
-   ```bash
-   jupyter notebook parameter_extractor.ipynb
-   ```
 
 ## Limitations
 
@@ -157,16 +72,3 @@ This study is limited by GitHub API constraints, search coverage, repository dup
 
 This work analyses publicly available source code and follows responsible research practices. All data collection respects GitHub rate limits and platform terms of use.
 
-## Acknowledgements
-
-[Add acknowledgements here.]
-
-## License
-
-[Insert license here.]
-```
-
-If you want, I can also make this:
-- more formal and paper-ready,
-- shorter for GitHub presentation,
-- or tailored to your exact project title and algorithms.
