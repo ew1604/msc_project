@@ -1,6 +1,6 @@
 # msc_project
 ```md
-# Web Prevalence of Password Storage Functions and their Parameteres
+# Web Prevalence of Password Storage Functions and their Parameters
 
 ## Abstract
 
