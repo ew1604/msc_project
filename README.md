@@ -6,11 +6,12 @@
 
 This project investigates the implementation and adoption of password-hashing and key-derivation algorithms in public GitHub repositories. We mine repository code, detect algorithm usage, clean and rank the resulting dataset, and extract concrete parameter values from real-world implementations. The study focuses on widely used algorithms, including Argon2, bcrypt, PBKDF2, scrypt, yescrypt, and Lyra2, across multiple programming languages.
 
-The workflow is designed to support reproducible empirical analysis of cryptographic practice in open-source software. It combines GitHub search data, repository metadata, and code-level pattern extraction to build a structured dataset suitable for comparative evaluation and downstream analysis.
+The workflow is designed to support reproducible empirical analysis of cryptographic practice in open-source software. It combines GitHub search data, repository metadata, and code-level pattern extraction to build a structured dataset suitable for comparative evaluation and analysis.
 
 ## Keywords
 
-GitHub mining, password hashing, key derivation, Argon2, bcrypt, PBKDF2, scrypt, yescrypt, Lyra2, repository analysis, cryptographic implementations, software security
+Password hashing, key derivation, Argon2, bcrypt, PBKDF2, scrypt, yescrypt, Lyra2, repository analysis, cryptographic implementations, Memory Hard Functions
+
 
 ## Overview
 
