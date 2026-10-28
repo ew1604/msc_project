@@ -39,6 +39,18 @@ This work contributes an automated workflow for collecting and analysing real-wo
 
 
 ## Methodology
+The study investigated the prevalence of password-hashing algorithms across software repositories, examining adoption across five programming languages: Python, Java, JavaScript, TypeScript and C. A Python-based data collection tool used the GitHub REST API to identify repositories and source files through algorithm/function names and contextual search terms, including password, hash, login and auth.
+
+The collected repositories were organised into three algorithm classes: monolithic hashes, iterative key-derivation functions (KDFs) and memory-hard functions (MHFs). Repository and source-file information was recorded and processed to support comparisons across algorithms and languages.
+
+Source-code analysis used Tree-sitter to parse files into abstract syntax trees (ASTs), helping distinguish relevant code structures from incidental algorithm mentions, such as those appearing in comments, and reduce false-positive matches. Regex-based processing was then used to extract relevant function arguments and parameter information. The extracted data was stored in intermediate files and CSV datasets for subsequent analysis.
+
+Argon2 variants were processed separately using variant-specific data files and parameter workbooks, then summarised under the broader Argon2 category. Some functions with very few recorded observations, including niche algorithms such as Balloon Hashing, were excluded from particular parameter analyses where the available data was insufficient for meaningful comparison.
+
+Repository popularity was examined using GitHub star-count tiers of 0–9, 10–49, 50–100 and 101+ stars. The evaluation aggregated repository counts and algorithm distributions by language and algorithm class, compared the primary corpus with an overlapping University of Durham dataset, and examined observed parameter configurations against relevant security recommendations and benchmark guidance.
+
+The methodology was subject to limitations arising from GitHub search coverage, false-positive and false-negative matches, static source-code analysis, incomplete visibility of dynamically supplied parameters and limited observations for niche algorithms.
+
 
 The proposed pipeline comprises the following stages:
 
