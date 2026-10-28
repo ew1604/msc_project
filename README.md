@@ -1,1 +1,172 @@
 # msc_project
+
+Here is a more concise conference-style README you can use for a project comparison or paper repository.
+
+```md
+# Web Prevalence of Password Storage Functions and their Parameteres
+
+## Abstract
+
+This project investigates the implementation and adoption of password-hashing and key-derivation algorithms in public GitHub repositories. We mine repository code, detect algorithm usage, clean and rank the resulting dataset, and extract concrete parameter values from real-world implementations. The study focuses on widely used algorithms, including Argon2, bcrypt, PBKDF2, scrypt, yescrypt, and Lyra2, across multiple programming languages.
+
+The workflow is designed to support reproducible empirical analysis of cryptographic practice in open-source software. It combines GitHub search data, repository metadata, and code-level pattern extraction to build a structured dataset suitable for comparative evaluation and downstream analysis.
+
+## Keywords
+
+GitHub mining, password hashing, key derivation, Argon2, bcrypt, PBKDF2, scrypt, yescrypt, Lyra2, repository analysis, cryptographic implementations, software security
+
+## Overview
+
+This repository implements a multi-stage pipeline for collecting and analysing real-world password-related cryptographic implementations from public GitHub repositories. The workflow proceeds through:
+
+1. Directory preparation
+2. GitHub code search
+3. Dataset deduplication
+4. Data cleaning and repository enrichment
+5.Parameter extraction
+
+The pipeline is designed for reproducibility and extensibility, enabling comparisons across repository popularity, programming language, and algorithm class.
+
+## Motivation
+
+Password storage and key derivation remain critical components of secure software engineering. While standards and best practices are well established, real-world implementations vary widely across projects. Understanding how developers implement cryptographic primitives in practice is essential for security research, code-quality analysis, and empirical software engineering studies.
+
+This work contributes an automated workflow for collecting and analysing real-world cryptographic implementation patterns at scale.
+
+## Research Questions
+
+- Which password-hashing and key-derivation algorithms appear most frequently in public GitHub repositories?
+- How do these implementations vary by programming language?
+- What parameter configurations are commonly used in real-world code?
+- How does repository popularity relate to the use of stronger password-hashing methods?
+
+## Methodology
+
+The proposed pipeline comprises the following stages:
+
+### 1. Search and Candidate Discovery
+GitHub code search is used to identify candidate repositories and files containing relevant cryptographic usage. Search queries incorporate keywords related to password handling, authentication, and hashing.
+
+### 2. Collection and Deduplication
+Search results are cleaned and deduplicated to reduce duplicate repository representations and improve data quality.
+
+### 3. Dataset Cleaning
+Raw results are parsed into structured records containing repository, file, language, algorithm, and URL information. GitHub star counts are added to support repository popularity analysis.
+
+### 4. Parameter Extraction
+Candidate source files are downloaded and analysed using regex-based extraction to recover algorithm-specific parameter values such as cost factors, iteration counts, and memory/time settings.
+
+### 5. Comparative Analysis
+The extracted dataset is grouped by algorithm, language, and repository tier, enabling comparative analysis of implementation patterns and repository characteristics.
+
+## Repository Workflow
+
+```text
+setup_dirs.sh
+    ↓
+github_search.ipynb
+    ↓
+deduplicator.ipynb
+    ↓
+clean.ipynb
+    ↓
+parameter_extractor.ipynb
+```
+
+## Repository Structure
+
+```text
+project/
+├── setup_dirs.sh
+├── github_search.ipynb
+├── deduplicator.ipynb
+├── clean.ipynb
+├── parameter_extractor.ipynb
+├── README.md
+├── data/
+│   ├── raw/
+│   ├── cleaned/
+│   └── extracted/
+├── outputs/
+│   ├── tier_1.csv
+│   ├── tier_2.csv
+│   ├── tier_3.csv
+│   └── tier_4.csv
+├── requirements.txt
+└── docs/
+```
+
+## Data Outputs
+
+The pipeline generates structured outputs including:
+
+- raw GitHub code-search results,
+- deduplicated CSV datasets,
+- cleaned records enriched with repository metadata,
+- tiered CSV files based on repository stars,
+- extracted cryptographic parameter values.
+
+## Algorithms of Interest
+
+- Argon2
+- bcrypt
+- PBKDF2
+- scrypt
+- yescrypt
+- Lyra2
+
+## Key Contributions
+
+- Reproducible workflow for mining and analysing password-hashing implementations on GitHub.
+- Automated pipeline for deduplication, cleaning, and metadata enrichment.
+- Extraction of concrete algorithm parameters from real-world code.
+- Comparative evaluation framework across repository popularity and language.
+
+## Usage
+
+1. Create required project directories:
+   ```bash
+   bash setup_dirs.sh
+   ```
+
+2. Run the code-search notebook:
+   ```bash
+   jupyter notebook github_search.ipynb
+   ```
+
+3. Run deduplication:
+   ```bash
+   jupyter notebook deduplicator.ipynb
+   ```
+
+4. Run cleaning and star-tier ranking:
+   ```bash
+   jupyter notebook clean.ipynb
+   ```
+
+5. Extract algorithm parameters:
+   ```bash
+   jupyter notebook parameter_extractor.ipynb
+   ```
+
+## Limitations
+
+This study is limited by GitHub API constraints, search coverage, repository duplication, and the heuristic nature of code-pattern detection. As a result, extracted findings should be interpreted as evidence of implementation patterns rather than definitive repository-wide security assessments.
+
+## Ethical Considerations
+
+This work analyses publicly available source code and follows responsible research practices. All data collection respects GitHub rate limits and platform terms of use.
+
+## Acknowledgements
+
+[Add acknowledgements here.]
+
+## License
+
+[Insert license here.]
+```
+
+If you want, I can also make this:
+- more formal and paper-ready,
+- shorter for GitHub presentation,
+- or tailored to your exact project title and algorithms.
